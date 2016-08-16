@@ -37,8 +37,15 @@ app.use(mountPath, api);
 
 // Parse Server plays nicely with the rest of your web routes
 app.get('/twilio', function(req, res) {
-  	var body = req.param('Body');
-	res.send(body);
+	var message_sid_1 = req.param('MessageSid');
+  	var body_1 = req.param('Body');
+	var from_1 = req.param('From');	
+	
+	var TestObject = Parse.Object.extend("TestObject");
+	var testObject = new TestObject();
+	testObject.save({body: body_1; messageSid: message_sid_1; from : from_1}).then(function(object) {
+ 	 res.send("succeed");
+	});
 });
 
 // There will be a test page available on the /test path of your server url
