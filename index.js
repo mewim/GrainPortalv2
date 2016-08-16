@@ -30,12 +30,12 @@ var api = new ParseServer({
 var dashboard = new ParseDashboard({
     apps: [
         {
-            serverURL: SERVER_URL,
-            appId: APP_ID,
-            masterKey: MASTER_KEY,
+            serverURL: process.env.SERVER_URL,
+            appId: process.env.APP_ID,
+            masterKey: process.env.MASTER_KEY,
             javascriptKey: "NOT USED",
             restKey: "NOT USED",
-            appName: APP_NAME,
+            appName: process.env.APP_NAME,
             production: true
         }
     ],
