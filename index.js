@@ -37,6 +37,9 @@ app.use(mountPath, api);
 
 // Parse Server plays nicely with the rest of your web routes
 app.get('/twilio', function(req, res) {
+	Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi");
+	Parse.serverURL = 'http://grainportal.herokuapp.com/parse';
+
 	var message_sid_1 = req.param('MessageSid');
   	var body_1 = req.param('Body');
 	var from_1 = req.param('From');	
