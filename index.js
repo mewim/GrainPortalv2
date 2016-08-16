@@ -41,9 +41,9 @@ app.use(mountPath, api);
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) {
 
-var TestObject = Parse.Object.extend("TestObject");
+var TestObject = Parse.Object.extend("Post");
 var testObject = new TestObject();
-testObject.save({foo: "bar"}).then(function(object) {
+testObject.save({text: "hello"}).then(function(object) {
   alert("yay! it worked");
 });
 
