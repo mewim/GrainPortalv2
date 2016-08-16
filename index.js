@@ -4,7 +4,7 @@
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
-var Parse = require('parse').Parse;
+var Parse = require('parse/node');
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
@@ -40,12 +40,10 @@ app.get('/', function(req, res) {
   
 	Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi");
 	Parse.serverURL = 'http://grainportal.herokuapp.com/parse';
-
-Parse.Cloud.run('averageStars', { movie: 'The Matrix' }).then(function(ratings) {
-  // ratings should be 4.5
-	res = ratings
-});
-
+	var TestObject = Parse.Object.extend("Post");
+	var testObject = new TestObject();
+	testObject.save({text: "bar"}).then(function(object) {
+  	});
 
 });
 
