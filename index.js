@@ -37,15 +37,11 @@ app.use(mountPath, api);
 
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) {
-
-Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi");
-Parse.serverURL = 'http://grainportal.herokuapp.com/parse';
-var TestObject = Parse.Object.extend("Post");
-var testObject = new TestObject();
-testObject.save({text: "hello"}).then(function(object) {
-  alert("yay! it worked");
+  
+	Parse.Cloud.run('hello', { text: 'Hello' }).then(function(ratings) {
+  // ratings should be 4.5
 });
-  res.status(200).send('I dream of being a website.  Please star the parse-server repo on GitHub!');
+
 });
 
 // There will be a test page available on the /test path of your server url
