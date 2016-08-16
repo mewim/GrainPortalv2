@@ -8,6 +8,7 @@ var Parse = require('parse/node');
 
 // Add ParseDashboard
 var ParseDashboard = require('parse-dashboard');
+var allowInsecureHTTP = true
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
