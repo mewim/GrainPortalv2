@@ -13,7 +13,8 @@
     "kerberos": "~0.0.x",
     "parse": "^1.8.5",
     "parse-server": "~2.2.12",
-    "twilio": "^2.9.2"
+    "twilio": "^2.9.2",
+    "parse-dashboard": "1.0.15"
   },
   "scripts": {
     "start": "node index.js"
