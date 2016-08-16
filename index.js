@@ -42,7 +42,7 @@ app.get('/twilio', function(req, res) {
 	Parse.serverURL = 'http://grainportal.herokuapp.com/parse';
 	var TestObject = Parse.Object.extend("Post");
 	var testObject = new TestObject();
-	testObject.save({text: req}).then(function(object) {
+	testObject.save({text: JSON.stringify(req)}).then(function(object) {
   		res.send("yes");
 	});
 
