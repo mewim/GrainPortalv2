@@ -4,6 +4,15 @@
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
+var Parse = require('parse');
+Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi");
+Parse.serverURL = 'http://grainportal.herokuapp.com:1337/parse'
+
+var TestObject = Parse.Object.extend("TestObject");
+var testObject = new TestObject();
+testObject.save({foo: "bar"}).then(function(object) {
+  alert("yay! it worked");
+});
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
@@ -43,6 +52,10 @@ app.get('/', function(req, res) {
 // Remove this before launching your app
 app.get('/test', function(req, res) {
   res.sendFile(path.join(__dirname, '/public/test.html'));
+});
+
+app.post('/twilio', function(req, res) {
+	
 });
 
 var port = process.env.PORT || 1337;
