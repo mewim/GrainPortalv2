@@ -36,8 +36,9 @@ var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
 // Parse Server plays nicely with the rest of your web routes
-app.get('/', function(req, res) {
-  	res.send(req);
+app.get('/twilio', function(req, res) {
+  	var body = request.param('Body');
+	res.send(body);
 });
 
 // There will be a test page available on the /test path of your server url
