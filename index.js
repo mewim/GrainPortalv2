@@ -43,7 +43,8 @@ app.get('/', function(req, res) {
 	var TestObject = Parse.Object.extend("Post");
 	var testObject = new TestObject();
 	testObject.save({text: "bar"}).then(function(object) {
-  	});
+  		res.send("yes");
+	});
 
 });
 
