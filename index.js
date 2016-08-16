@@ -27,7 +27,7 @@ var api = new ParseServer({
   }
 });
 
-Parse Dashboard
+// Parse Dashboard
 var dashboard = new ParseDashboard({
     apps: [
         {
