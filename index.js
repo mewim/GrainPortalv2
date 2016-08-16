@@ -8,7 +8,6 @@ var Parse = require('parse/node');
 
 // Add ParseDashboard
 var ParseDashboard = require('parse-dashboard');
-// var allowInsecureHTTP = true;
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
@@ -28,25 +27,25 @@ var api = new ParseServer({
 });
 
 // Parse Dashboard
-// var dashboard = new ParseDashboard({
-//     apps: [
-//         {
-//             serverURL: "http://grainportal.herokuapp.com/parse",
-//             appId: "Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi",
-//             masterKey: "sK9hBhqvxBh4KbqjroLodVeTCKtFXcpP",
-//             javascriptKey: "NOT USED",
-//             restKey: "NOT USED",
-//             appName: "grainportal",
-//             production: true
-//         }
-//     ],
-//     users: [
-//         {
-//             user: 'admin',
-//             pass: 'password'
-//         }
-//     ]
-// });
+var dashboard = new ParseDashboard({
+    apps: [
+        {
+            serverURL: "http://grainportal.herokuapp.com/parse",
+            appId: "Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi",
+            masterKey: "sK9hBhqvxBh4KbqjroLodVeTCKtFXcpP",
+            javascriptKey: "NOT USED",
+            restKey: "NOT USED",
+            appName: "grainportal",
+            production: true
+        }
+    ],
+    users: [
+        {
+            user: 'admin',
+            pass: 'password'
+        }
+    ]
+});
 
 // app.use('/dashboard', dashboard);
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
