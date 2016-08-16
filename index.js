@@ -42,10 +42,7 @@ app.get('/', function(req, res) {
 	Parse.serverURL = 'http://grainportal.herokuapp.com/parse';
 	var TestObject = Parse.Object.extend("Post");
 	var testObject = new TestObject();
-	testObject.save({text: JSON.stringify(req)}).then(function(object) {
-  		res.send("yes");
-	});
-
+	res.send(JSON.stringify(req));
 });
 
 // There will be a test page available on the /test path of your server url
