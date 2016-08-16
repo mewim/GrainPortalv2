@@ -36,7 +36,7 @@ var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
 // Parse Server plays nicely with the rest of your web routes
-app.get('/twilio', function(req, res) {
+app.get('/', function(req, res) {
   
 	Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi");
 	Parse.serverURL = 'http://grainportal.herokuapp.com/parse';
