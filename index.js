@@ -37,7 +37,7 @@ app.use(mountPath, api);
 
 // Parse Server plays nicely with the rest of your web routes
 app.get('/twilio', function(req, res) {
-  	var body = request.param('Body');
+  	var body = req.param('Body');
 	res.send(body);
 });
 
