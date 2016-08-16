@@ -30,12 +30,12 @@ var api = new ParseServer({
 var dashboard = new ParseDashboard({
     apps: [
         {
-            serverURL: process.env.SERVER_URL,
-            appId: process.env.APP_ID,
-            masterKey: process.env.MASTER_KEY,
+            serverURL: "http://grainportal.herokuapp.com/parse",
+            appId: "Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi",
+            masterKey: "sK9hBhqvxBh4KbqjroLodVeTCKtFXcpP",
             javascriptKey: "NOT USED",
             restKey: "NOT USED",
-            appName: process.env.APP_NAME,
+            appName: "grainportal",
             production: true
         }
     ],
