@@ -38,9 +38,19 @@ app.use(mountPath, api);
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) {
   
-	Parse.Cloud.run('hello', { text: 'Hello' }).then(function(ratings) {
-  // ratings should be 4.5
-});
+Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi");
+Parse.serverURL = 'http://grainportal.herokuapp.com/parse';
+
+    var TestObject = Parse.Object.extend("Post");
+    var testObject = new TestObject();
+      testObject.save({text: "bar"}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
 
 });
 
