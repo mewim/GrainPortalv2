@@ -7,7 +7,7 @@ var path = require('path');
 var Parse = require('parse/node');
 
 // Add ParseDashboard
-var ParseDashboard = require('parse-dashboard');
+// var ParseDashboard = require('parse-dashboard');
 var allowInsecureHTTP = true;
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
@@ -48,7 +48,7 @@ var api = new ParseServer({
 //     ]
 // });
 
-app.use('/dashboard', dashboard);
+// app.use('/dashboard', dashboard);
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
 // javascriptKey, restAPIKey, dotNetKey, clientKey
