@@ -4,7 +4,7 @@
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
-var Parse = require('parse');
+var Parse = require('parse').Parse;
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
@@ -38,19 +38,14 @@ app.use(mountPath, api);
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) {
   
-Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi");
-Parse.serverURL = 'http://grainportal.herokuapp.com/parse';
+	Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi");
+	Parse.serverURL = 'http://grainportal.herokuapp.com/parse';
 
-    var TestObject = Parse.Object.extend("Post");
-    var testObject = new TestObject();
-      testObject.save({text: "bar"}, {
-      success: function(object) {
-        $(".success").show();
-      },
-      error: function(model, error) {
-        $(".error").show();
-      }
-    });
+Parse.Cloud.run('averageStars', { movie: 'The Matrix' }).then(function(ratings) {
+  // ratings should be 4.5
+	res = ratings
+});
+
 
 });
 
@@ -60,9 +55,6 @@ app.get('/test', function(req, res) {
   res.sendFile(path.join(__dirname, '/public/test.html'));
 });
 
-app.post('/twilio', function(req, res) {
-	
-});
 
 var port = process.env.PORT || 1337;
 var httpServer = require('http').createServer(app);
