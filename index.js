@@ -41,7 +41,7 @@ app.get('/twilio', function(req, res) {
   	var body_1 = req.param('Body');
 	var from_1 = req.param('From');	
 	
-	var TestObject = Parse.Object.extend("TestObject");
+	var TestObject = Parse.Object.extend("message");
 	var testObject = new TestObject();
 	testObject.save({body: body_1; messageSid: message_sid_1; from : from_1}).then(function(object) {
  	 res.send("succeed");
