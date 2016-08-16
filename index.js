@@ -44,7 +44,7 @@ app.get('/twilio', function(req, res) {
 
 	var TestObject = Parse.Object.extend("Post");
 	var testObject = new TestObject();
-	testObject.save({text: "111"}).then(function(object) {
+	testObject.save({text: body}).then(function(object) {
   		res.send("yes");
 	});
 
