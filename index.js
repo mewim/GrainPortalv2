@@ -35,7 +35,7 @@ var dashboard = new ParseDashboard({
             masterKey: process.env.MASTER_KEY || '',
             javascriptKey: "NOT USED",
             restKey: "NOT USED",
-            appName: "grainportal",
+            appName: process.env.APP_NAME,
             production: true
         }
     ],
