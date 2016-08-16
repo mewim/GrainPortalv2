@@ -5,9 +5,6 @@ var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 var Parse = require('parse');
-Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi");
-Parse.serverURL = 'http://grainportal.herokuapp.com:1337/parse'
-
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
@@ -41,12 +38,13 @@ app.use(mountPath, api);
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) {
 
+Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi");
+Parse.serverURL = 'http://grainportal.herokuapp.com/parse';
 var TestObject = Parse.Object.extend("Post");
 var testObject = new TestObject();
 testObject.save({text: "hello"}).then(function(object) {
   alert("yay! it worked");
 });
-
   res.status(200).send('I dream of being a website.  Please star the parse-server repo on GitHub!');
 });
 
