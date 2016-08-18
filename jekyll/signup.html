@@ -1,0 +1,92 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include head.html %}
+  <!-- User Javascript and CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/signup.css">
+  <script src="/assets/js/signup.js"></script>
+</head>
+<body>
+  <div class="ui middle aligned center aligned grid">
+    <div class="column">
+      <h2 class="ui teal image header">
+      <div class="content">
+        Sign up for an account!
+      </div>
+      </h2>
+      <form class="ui large form" method="post" action = "/signup/">
+        <div class="ui stacked segment">
+          <div class ="two fields">
+            <div class="field">
+              <div class="ui left labeled input">
+                <div class = "ui label">First name</div>
+                <input type="text" name="first_name" placeholder="First name">
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left labeled input">
+                <div class = "ui label">Last name</div>
+                <input type="text" name="last_name" placeholder="Last name">
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left labeled input">
+              <div class = "ui label">Username</div>
+              <input type="text" name="username" placeholder="Username">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left labeled input">
+              <div class = "ui label">Address</div>
+              <input type="text" name="address" placeholder="Street address">
+            </div>
+          </div>
+          <div class ="three fields">
+            <div class="field">
+              <div class="ui left labeled input">
+                <div class = "ui label">City</div>
+                <input type="text" name="city" placeholder="City">
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left labeled input">
+                <div class = "ui label">State</div>
+                <input type="text" name="state" placeholder="State">
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left labeled input">
+                <div class = "ui label">Zip-code</div>
+                <input type="number" name="zipcode" placeholder="Zipcode">
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left labeled input">
+              <div class = "ui label">E-mail</div>
+              <input type="email" name="email" placeholder="E-mail">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left labeled input">
+              <div class = "ui label">Password</div>
+              <input type="password" name="password" placeholder="Password">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left labeled input">
+              <div class = "ui label">Password (again)</div>
+              <input type="password" name="password1" placeholder="Password">
+            </div>
+          </div>
+          <div class="ui fluid large teal submit button">Signup!</div>
+        </div>
+        <div class="ui error message"></div>
+      </form>
+    </div>
+</div>
+</body>
+</html>
