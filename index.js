@@ -57,7 +57,7 @@ var dashboard = new ParseDashboard({
 var app = express();
 
 // Serve static assets from the /public folder
-app.use('/public', express.static(path.join(__dirname, '/public')));
+app.use(express.static('public'));
 
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
@@ -79,13 +79,6 @@ app.get('/twilio', function(req, res) {
 });
 
 app.use('/dashboard', dashboard);
-
-// Frontend
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/'));
-});
-
-
 
 var port = process.env.PORT || 1337;
 var httpServer = require('http').createServer(app);
