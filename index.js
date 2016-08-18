@@ -78,13 +78,13 @@ app.get('/twilio', function(req, res) {
 
 });
 
-// There will be a test page available on the /test path of your server url
-// Remove this before launching your app
-app.get('/test', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/test.html'));
+app.use('/dashboard', dashboard);
+
+// Frontend
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '/public/'));
 });
 
-app.use('/dashboard', dashboard);
 
 
 var port = process.env.PORT || 1337;

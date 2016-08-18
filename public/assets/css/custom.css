@@ -1,0 +1,83 @@
+
+.menu-bar{
+
+}
+
+
+.content{
+  padding: 10px;
+  padding-right: 40px !important;
+}
+
+.icon-my{
+  height: 140px;
+  width: 140px;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 25px;
+  border: 2px solid grey;
+}
+
+.icon-container{
+  margin-top: 10px;
+  margin-left: 5%;
+
+
+}
+
+.table-container{
+  margin:4%;
+}
+
+.images-container{
+  margin-top: 5% !important;
+  margin:4%;
+  visibility: hidden;
+}
+
+.input-box{
+  width: 30%;
+}
+
+.table-box{
+  width: 50%;
+}
+
+.data{
+  visibility: hidden;
+}
+
+.toolbar{
+  background-color: #262626;
+  height: 40px;
+  color: whitesmoke;
+  font-size: medium;
+  padding: 10px;
+}
+
+.light-text{
+  font-size: 12px;
+  font-style: normal;
+}
+
+.massive{
+  font-size: 12px;
+  font-style: normal;
+}
+
+.menu-icon{
+  margin: 7px !important;
+}
+
+.home-index {
+  padding: 40px;
+}
+
+.card-image{
+  height: 300px !important;
+  width: 200px !important;
+}
+
+.report-btns{
+  margin-right: 10px !important;
+}
