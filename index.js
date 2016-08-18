@@ -65,15 +65,17 @@ app.use(mountPath, api);
 
 // Parse Server plays nicely with the rest of your web routes
 app.get('/twilio', function(req, res) {
-	var body = req.param('Body');
-
 	Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi");
 	Parse.serverURL = 'http://grainportal.herokuapp.com/parse';
-
+	
+	var from = req.param('From');
+	var message_sid = req.param('MessageSid');
+	var body = req.param('Body');
+	
 	var TestObject = Parse.Object.extend("Post");
 	var testObject = new TestObject();
-	testObject.save({text: body}).then(function(object) {
-  		res.send("yes");
+	testObject.save({messageSid: message_sid, from: from, body: body}).then(function(object) {
+  		res.send("saved");
 	});
 
 });
