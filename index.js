@@ -71,12 +71,24 @@ app.get('/twilio', function(req, res) {
 	var from = req.param('From');
 	var message_sid = req.param('MessageSid');
 	var body1 = req.param('Body');
-	
-	var TestObject = Parse.Object.extend("Message");
-	var testObject = new TestObject();
-	testObject.save({messageSid: message_sid, from: from, body: body1}).then(function(object) {
+
+	var res = body1.split('*');
+	if (res.length == 5 && res[0] == 'sensor') {
+		var TestObject = Parse.Object.extend("SensorReport");
+		var testObject = new TestObject();
+
+		testObject.save({messageSid: message_sid, from: from, major: res[1], minor: res[2], temperature: res[3], humidity: res[4]}).then(function(object) {
   		res.send("saved");
 	});
+
+	} else {		
+		var TestObject = Parse.Object.extend("Message");
+		var testObject = new TestObject();
+		testObject.save({messageSid: message_sid, from: from, body: body1}).then(function(object) {
+  			res.send("saved");
+		});	
+	}
+	
 
 });
 
