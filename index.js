@@ -86,8 +86,8 @@ app.get('/twilio', function(req, res) {
 		var testObject = new TestObject();
 
 		testObject.save({messageSid: message_sid, from: from, type: res[1], available: res[2], price: res[3], quantity: res[4], major: res[5], minor: res[6]}).then(function(object) {
-  		res.send("saved");
-
+  			res.send("saved");
+		});	
 	} else {		
 		var TestObject = Parse.Object.extend("Message");
 		var testObject = new TestObject();
