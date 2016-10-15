@@ -1,7 +1,6 @@
 $(document)
 .ready(function() {
-  $('.ui.form')
-  .form({
+  $('.ui.form').form({
     onSuccess: function(event, fields) {
       event.preventDefault();
       submit_form(fields);
