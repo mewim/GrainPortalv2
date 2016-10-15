@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grain Portal</title>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <!-- Parse SDK-->
+  <script src="https://npmcdn.com/parse@1.9.1/dist/parse.js"></script>
+  <!-- Semantic UI -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/semantic-ui/2.2.2/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.2/semantic.min.js"></script>
+  <style type="text/css">
+    .ui.label{
+      min-width:100px;
+    }
+  </style>
+  <script>
+    // Initialize Parse API 
+    Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi", "iffERp8rzgHwekt7Qy4eBkc4O59XcRe3");
+    Parse.serverURL = "https://grainportal.herokuapp.com/parse";  
+  </script>
+
+  <!-- User Javascript and CSS -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+  <script src="/assets/js/login_checker.js"></script>
+</head>
+<body class="main main-view">
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <div href="#" class="header item">
+        Grain Portal
+      </div>
+    </div>
+    <div class="right menu">
+      <div href="#" class="header huge item" id="header_username"></div>
+      <a href="/logout" class="item">Logout</a>
+    </div>
+  </div>
+  <div>
+    <i class="pagelines icon"></i>
+    Grain Portal
+  </div>
+
+  <br>
+  <br>
+  <div class="ui grid">
+  <div class="two wide column">
+     <a href = "/home"><button class=" ui red plus icon button">
+        <i class="huge home icon menu-icon"></i><br>
+        Home
+      </button></a>
+
+      <a href = "/showreport"><button class=" ui orange icon button">
+        <i class="huge edit icon menu-icon"></i><br>
+        Reports
+      </button><br></a>
+
+      <a href = "/sms"><button class=" ui yellow icon button">
+        <i class="huge mail icon menu-icon"></i><br>
+        Messages
+      </button><br></a>
+
+      <a href = "/market"><button class=" ui teal icon button">
+        <i class="huge shop icon menu-icon"></i><br>
+        Market
+      </button><br></a>
+
+      <a href = "/user"><button class=" ui green icon button">
+        <i class="huge user icon menu-icon"></i><br>
+        Users
+      </button><br></a>
+
+      <a href = "/settings"><button class=" ui blue icon button">
+        <i class="huge settings icon menu-icon"></i><br>
+        Settings
+      </button><br></a>
+    </div>
+    <div class="eight wide column " id="content-area">
+      <link rel="stylesheet" type="text/css" href="/assets/css/home.css">
+      <div id="home-content">
+
+          <div class="ui unordered steps">
+
+              <br>
+              <a href="/home" class="active step">
+                  <div class="content">
+                      <div class="title">Planting</div>
+                  </div>
+              </a>
+              
+              <a href="/growing" class="active step">
+                  <div class="content">
+                      <div class="title">Growing</div>
+                  </div>
+              </a>
+
+              <a href="/harvesting" class="active step">
+                  <div class="content">
+                      <div class="title">Harvesting</div>
+                  </div>
+              </a>
+
+              <a href="/cleaning" class="active step">
+                  <div class="content">
+                      <div class="title">Cleaning</div>
+                  </div>
+              </a>
+
+              <a href="/drying" class="active step">
+                  <div class="content">
+                      <div class="title">Drying</div>
+                  </div>
+              </a>
+
+              <a href="/milling" class="active step">
+                  <div class="content">
+                      <div class="title">Milling</div>
+                  </div>
+              </a>
+
+              <a href="/sales" class="active step">
+                  <div class="content">
+                      <div class="title">Sales</div>
+                  </div>
+              </a>
+
+
+          </div>
+          <br><br>
+
+          <div class="ui three cards ">
+
+              <!-- card 1 -->
+
+              <div class="ui pink card" onclick="card1_show_content();">
+                  <div class="big image">
+                      <img src="/assets/img/2.jpg">
+                  </div>
+                  <div class="content ">
+                      <a class="header">Basic of Soil Preperation</a>
+                      <div class="description">
+                          Ploughing and Preperation
+                      </div>
+                  </div>
+                  <div class="extra content">
+                      University of Illinois<br>May 2015
+                  </div>
+              </div>
+
+              <!-- card 2 -->
+
+              <div class="ui orange card" onclick="card1_show_content();">
+                  <div class="big image">
+                      <img src="/assets/img/4.jpg">
+                  </div>
+                  <div class="content ">
+                      <a class="header">Basic of Soil Preperation</a>
+                      <div class="description">
+                          Ploughing and Preperation
+                      </div>
+                  </div>
+                  <div class="extra content">
+                      University of Illinois<br>May 2015
+                  </div>
+              </div>
+
+              <!-- card 3 -->
+
+              <div class="ui yellow card" onclick="card1_show_content();">
+                  <div class="big image">
+                       <img src="/assets/img/3.jpg">
+                  </div>
+                  <div class="content ">
+                      <a class="header">Basic of Soil Preperation</a>
+                      <div class="description">
+                          Ploughing and Preperation
+                      </div>
+                  </div>
+                  <div class="extra content">
+                      University of Illinois<br>May 2015
+                  </div>
+              </div>
+
+          </div>
+
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
