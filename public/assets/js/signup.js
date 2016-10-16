@@ -101,6 +101,8 @@ $(document)
     console.log(fields);
     var user = new Parse.User();
     user.set("username", fields.username.toLowerCase());
+	//shu add userid
+	user.set("userid",fields.userid);
     user.set("password", fields.password);
     user.set("email", fields.email.toLowerCase());
     user.set("firstName", fields.first_name);
