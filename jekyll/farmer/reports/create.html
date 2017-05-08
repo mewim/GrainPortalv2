@@ -1,0 +1,55 @@
+---
+layout: farmer_main
+---
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Create a New Report</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+
+            <!-- /.panel-heading -->
+            <div id="info">
+                <div class="alert alert-info">
+                    <i class="fa fa-info-circle fa-fw"></i> Create a report to help you better manage your yields. It also helps potential buyer and researchers learn more about your grain.
+                </div>
+            </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Grain type</label>
+                        <input class="form-control" id="type" placeholder="Enter type of the grain (e.g. corn)">
+                    </div>
+                    <div class="form-group">
+                        <label>Quantity (kg)</label>
+                        <input class="form-control" id="quantity" placeholder="Enter quantity of the grain in kilograms">
+                    </div>
+                    <div class="form-group">
+                        <label for="sensor">Select a sensor</label>
+                        <select class="form-control" id="sensor">
+                            <option value = "0">Loading...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Sensor date range</label>
+                        <input class="form-control dpicker" id="start" placeholder="Starts at">
+                        <input class="form-control dpicker" id="end" placeholder="Ends at">
+                        <p class="help-block">Please select the sensor you put in the bag, and specify correct date range. It helps researchers and buyers learn assess the quality of your grain.</p>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <button type="button" class="btn btn-success" onclick="submit()">Submit Report</button>
+                    <button type="button" class="btn btn-danger" onclick="reset()">Reset Form</button>
+                </div>
+                <div class="col-lg-12">
+                    <div id="alert"></div>
+                </div>
+                <div class="col-lg-12" id="table-wrapper">
+                </div>
+    </div>
+</div>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+<script src="/assets/js/farmer/reports/create.js"></script>

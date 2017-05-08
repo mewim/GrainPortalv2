@@ -1,0 +1,28 @@
+{
+  "name": "grain-portal",
+  "version": "2.0.0",
+  "description": "Grain Portal project.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ParsePlatform/parse-server-example"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "~4.11.x",
+    "kerberos": "~0.0.x",
+    "parse": "^1.8.5",
+    "parse-server": "~2.2.12",
+    "twilio": "^2.9.2",
+    "parse-dashboard": "~1.0.15",
+    "validator": "^6.2.0",
+    "body-parser": "^1.15.2",
+    "moment": "^2.17.0"
+  },
+  "scripts": {
+    "start": "node routes/index.js"
+  },
+  "engines": {
+    "node": ">=4.3"
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grain Portal v2.0</title>
+<!-- jQuery 2 -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<!-- Material Design fonts -->
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+<!-- Bootstrap 3 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<!-- Bootstrap Material Design -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/bootstrap-material-design.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/ripples.min.css">
+
+<!-- Font Awesome Icons -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- SB Admin 2 -->
+<link href="/assets/css/sb-admin-2.css" rel="stylesheet">
+<script src="/assets/js/util.js"></script>
+
+
+    <!-- User Javascript and CSS -->
+    <script src="/assets/js/login.js"></script>
+    <style>
+        body {
+            background: url("/assets/img/xl.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+    <!-- Header -->
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/">Spending Record</a>
+    </div>
+    <!-- End Header -->
+</nav>
+
+<div id="page-wrapper" style="margin-top: 100px">
+    <div class="row">
+    <div class="container" align="center">
+            <div class="login-panel panel panel-default" align="left" style="max-width: 500px;">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please Sign In</h3>
+                </div>
+
+
+                <div class="panel-body">
+                        <fieldset>
+                            <div id="info">
+                            <div class="alert alert-info">
+                                <i class="fa fa-info-circle fa-fw"></i> Please login to continue.
+                            </div>
+                            </div>
+                            <div class="form-group">
+                                <input id="username" class="form-control" placeholder="Username" name="username"
+                                       autofocus>
+                                <input id="password" class="form-control" placeholder="Password" name="password"
+                                       type="password"
+                                       value="">
+                            </div>
+                            <!-- Change this to a button or input when using this as a form -->
+                            <button class="btn btn-lg btn-success btn-block" onclick="login()">Login</button>
+                        <a  class="btn btn-lg btn-primary btn-block">Sign Up</a>
+                        </fieldset>
+                </div>
+                </div>
+            </div>
+    </div>
+</div>
+</body>
+</html>

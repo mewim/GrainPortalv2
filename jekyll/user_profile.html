@@ -1,0 +1,108 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head.html %}
+    <!-- User Javascript and CSS -->
+    <script src="/assets/js/validator.min.js"></script>
+    <script type="text/javascript">
+        var currentUser = Parse.User.current();
+        if (!currentUser) {
+            window.location = '/login';
+        }
+    </script>
+    <style>
+        body {
+            background: #F8F8F8;
+        }
+        body {
+            background: url("/assets/img/field.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+<div class="navbar-header">
+    <a class="navbar-brand" href="/">Grain Portal v2.0</a>
+</div>
+    <ul class="nav navbar-nav navbar-right">
+        <!-- /.dropdown -->
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li><a href="/user_profile"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                </li>
+                <!--<li><a href="#"><i class="fa fa-trash-o fa-fw"></i> Delete Me</a>-->
+                <!--</li>-->
+                <li class="divider"></li>
+                <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+            </ul>
+            <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+    </ul>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">User Profile</h3>
+                </div>
+                <div class="panel-body">
+                    <fieldset>
+                        <div id="info">
+                            <div class="alert alert-info">
+                                <i class="fa fa-info-circle fa-fw"></i> You can edit your profile on this page.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <p id="username"> Loading...</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <p id="phoneNumber"> Loading...</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input id="firstName" class="form-control" placeholder="Enter your first name">
+                            <input id="lastName" class="form-control" placeholder="Enter your last name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <p id="country"> Loading...</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address (Optional)</label>
+                            <input id="state" class="form-control" placeholder="Enter your state">
+                            <input id="city" class="form-control" placeholder="Enter your city">
+                            <input id="address" class="form-control" placeholder="Enter your street address">
+                            <input id="zipCode" class="form-control" placeholder="Enter your zip code">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail Address (Optional)</label>
+                            <input id="email" class="form-control" placeholder="Enter your e-mail address">
+                        </div>
+                        <button class="btn btn-lg btn-success btn-block" onclick="save()">Save</button>
+                        <button class="btn btn-lg btn-primary btn-block" onclick="window.history.back();">Go Back</button>
+                        <div id = "alert"></div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="/assets/js/user_profile.js"></script>
+</body>
+</html>

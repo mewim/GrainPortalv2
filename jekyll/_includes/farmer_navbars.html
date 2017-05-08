@@ -1,0 +1,117 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/farmer">Grain Portal v2.0</a>
+    </div>
+    <!-- /.navbar-header -->
+
+    <ul class="nav navbar-nav navbar-right">
+        <!-- /.dropdown -->
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li><a href="/user_profile"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                </li>
+                <!--<li><a href="#"><i class="fa fa-trash-o fa-fw"></i> Delete Me</a>-->
+                <!--</li>-->
+                <li class="divider"></li>
+                <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+            </ul>
+            <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+    </ul>
+    <!-- /.navbar-top-links -->
+
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+                <li>
+                    <a href="/farmer/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-envelope fa-fw"></i> Notifications<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="/farmer/notifications/inbox/">Inbox</a>
+                        </li>
+                        <li>
+                            <a href="/farmer/notifications/archived/">Archived</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-thermometer-full fa-fw"></i> Sensors<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="/farmer/sensors/manage/">Management</a>
+                        </li>
+                        <li>
+                            <a href="/farmer/sensors/read/">Readings</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-edit fa-fw"></i> Reports<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="/farmer/reports/create/">Create</a>
+                        </li>
+                        <li>
+                            <a href="/farmer/reports/view/">View</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-shopping-cart fa-fw"></i> Market<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="/farmer/market/list/">List</a>
+                        </li>
+                        <li>
+                            <a href="/farmer/market/selling/">Selling</a>
+                        </li>
+                        <!--<li>-->
+                            <!--<a href="/farmer/market/sold/">Sold</a>-->
+                        <!--</li>-->
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-question-circle fa-fw"></i> Q & A<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="/farmer/qa/ask/">Ask</a>
+                        </li>
+                        <li>
+                            <a href="/farmer/qa/answered/">Answered</a>
+                        </li>
+                        <li>
+                            <a href="/farmer/qa/unanswered/">Unanswered</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="/farmer/guide/"><i class="fa fa-info-circle fa-fw"></i> Guide</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.navbar-static-side -->
+</nav>
