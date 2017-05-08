@@ -9,7 +9,7 @@
 <!-- Parse SDK -->
 <script src="https://npmcdn.com/parse@1.9.1/dist/parse.js"></script>
 <script>
-    // Initialize Parse API
+    // Initialize Parse API 
     Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi", "iffERp8rzgHwekt7Qy4eBkc4O59XcRe3");
     Parse.serverURL = "https://grainportalv2.herokuapp.com/parse";
 </script>
@@ -84,6 +84,11 @@
                             <input id="username" class="form-control" placeholder="Enter your username" name="username"
                                    autofocus>
                             <small id="usernameHelp" class="form-text text-muted">Between 1 to 10 characters. Letters and numbers only.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input id="phoneNumber" class="form-control" placeholder="Enter your phone number">
+                            <small id="phoneNumberHelp" class="form-text text-muted">Full phone number with area code.</small>
                         </div>
                         <div class="form-group">
                             <label for="name">Name</label>
