@@ -9,7 +9,7 @@
 <!-- Parse SDK -->
 <script src="https://npmcdn.com/parse@1.9.1/dist/parse.js"></script>
 <script>
-    // Initialize Parse API 
+    // Initialize Parse API
     Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi", "iffERp8rzgHwekt7Qy4eBkc4O59XcRe3");
     Parse.serverURL = "https://grainportalv2.herokuapp.com/parse";
 </script>
@@ -149,9 +149,9 @@
                         <li>
                             <a href="/farmer/market/selling/">Selling</a>
                         </li>
-                        <!--<li>-->
-                            <!--<a href="/farmer/market/sold/">Sold</a>-->
-                        <!--</li>-->
+                        <li>
+                            <a href="/farmer/market/sold/">Sold</a>
+                        </li>
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
@@ -183,162 +183,24 @@
     <div id="page-wrapper">
         <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Dashboard</h1>
+        <h1 class="page-header">Answered Questions</h1>
     </div>
 </div>
 
+<div id="info">
+
+</div>
 <div class="row">
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-envelope fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
-                        <div class="huge" id="notification-count"><i class="fa fa-spinner fa-pulse fa-fw"></i><br></div>
-                        <div>Notifications</div>
-                    </div>
-                </div>
-            </div>
-            <a href="/farmer/notifications/inbox">
-                <div class="panel-footer">
-                    <span class="pull-left">View</span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
-                </div>
-            </a>
+    <div class="col-lg-12" id="question-container">
+        <div class="huge">
+            <div class="loader"></div>
         </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-green">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-edit fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
-                        <div class="huge" id="report-count"><i class="fa fa-spinner fa-pulse fa-fw"></i><br></div>
-                        <div>Reports
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a href="/farmer/reports/view">
-                <div class="panel-footer">
-                    <span class="pull-left">View</span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-yellow">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-shopping-cart fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
-                        <div class="huge" id="listing_count"><i class="fa fa-spinner fa-pulse fa-fw"></i><br></div>
-                        <div>Listings</div>
-                    </div>
-                </div>
-            </div>
-            <a href="/farmer/market/selling">
-                <div class="panel-footer">
-                    <span class="pull-left">View</span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-red">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-thermometer-full fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
-                        <div class="huge" id="sensor_count"><i class="fa fa-spinner fa-pulse fa-fw"></i><br></div>
-                        <div>Sensors</div>
-                    </div>
-                </div>
-            </div>
-            <a href="/farmer/sensors/manage">
-                <div class="panel-footer">
-                    <span class="pull-left">View</span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
+        <br>
+        <h4 style="text-align:center">Loading...</h4>
     </div>
 </div>
-
-<div class="row">
-    <div class="col-lg-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <i class="fa fa-bar-chart-o fa-fw"></i> Yields (Based on Latest 10 Reports)
-            </div>
-            <!-- /.panel-heading -->
-            <div class="panel-body" id="yield_graph">
-                <div class="huge">
-                    <div class="loader"></div>
-                </div>
-                <br>
-                <h4 style="text-align:center">Loading...</h4>
-            </div>
-            <!-- /.panel-body -->
-        </div>
-        <!-- /.panel -->
-        <!--<div class="panel panel-default">-->
-            <!--<div class="panel-heading">-->
-                <!--<i class="fa fa-bar-chart-o fa-fw"></i> Last Sensor Readings-->
-            <!--</div>-->
-            <!--&lt;!&ndash; /.panel-heading &ndash;&gt;-->
-            <!--<div class="panel-body">-->
-                <!--<div class="huge">-->
-                    <!--<div class="loader"></div>-->
-                <!--</div>-->
-                <!--<br>-->
-                <!--<h4 style="text-align:center">Loading...</h4>-->
-                <!--&lt;!&ndash; /.row &ndash;&gt;-->
-            <!--</div>-->
-            <!--&lt;!&ndash; /.panel-body &ndash;&gt;-->
-        <!--</div>-->
-    </div>
-    <!--<div class="col-lg-4">-->
-        <!--<div class="panel panel-default">-->
-            <!--<div class="panel-heading">-->
-                <!--<i class="fa fa-link"></i> Quick Links-->
-            <!--</div>-->
-            <!--&lt;!&ndash; /.panel-heading &ndash;&gt;-->
-            <!--<div class="panel-body">-->
-                <!--<div class="list-group">-->
-                    <!--<a href="#" class="list-group-item">-->
-                        <!--<i class="fa fa-comment fa-fw"></i> Send a Message-->
-                        <!--<span class="pull-right text-muted small"></span>-->
-                    <!--</a>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
 </div>
-<!-- morris.js-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-
-<script src="/assets/js/farmer/index.js"></script>
-
+<script src="/assets/js/farmer/qa/answered.js"></script>
     </div>
 </div>
 </body>
