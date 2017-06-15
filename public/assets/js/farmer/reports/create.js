@@ -39,9 +39,11 @@ function submit(){
     most_recent_querry.equalTo("username", currentUser.get('username'));
     most_recent_querry.descending("createdAt");
     most_recent_querry.limit(1);
+    console.log(raw_sensorStartDate, raw_sensorEndDate);
     most_recent_querry.find({
         success: function (most_recent_data) {
             var new_report = new FarmerReport();
+            console.log(raw_sensorStartDate, raw_sensorEndDate);
             new_report.set("type", type);
             new_report.set("username", currentUser.get('username'));
             new_report.set("quantity", quantity);
@@ -53,6 +55,7 @@ function submit(){
             if(most_recent_data.count === 0){
                 new_report.set("digitalID", 0);
             }
+
             else{
                 var most_recent = most_recent_data[0];
                 new_report.set("digitalID", most_recent.get("digitalID") + 1);
