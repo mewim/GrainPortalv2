@@ -23,7 +23,7 @@ function load_reports() {
             create_table(results);
         },
         error: function (error) {
-            $("#table-wrapper").html(red_alert("Cannot load reports, please try again later."));
+            $("#table-wrapper").html(red_alert("Cannot load sales, please try again later."));
         }
     });
 }
@@ -45,27 +45,30 @@ function create_table(results) {
         + '<th>Sold At</th>'
         + '<th>Type</th>'
         + '<th>Quantity (Kg)</th>'
-        + '<th>List</th>'
+      //  + '<th>List</th>'
+        + '<th>Sale Comments</th>'
         + '</tr>'
         + '</thead>');
-    table = $('#table').DataTable({
-        "columnDefs": [
-            {
-                "orderable": false,
-                "targets": -1,
-                "data": null,
-                "width": "1%",
-                "defaultContent": '<button type="button" class="btn btn-success list" data-toggle="modal" data-target="#more_info">List</button>'
-            }],
-        "order": [[0, "desc"]]
-    });
+        table = $('#table').DataTable({
+          // "columnDefs": [
+            //    {
+            //        "orderable": false,
+            //        "targets": -1,
+            //        "data": null,
+            //        "width": "1%",
+            //      //  "defaultContent": '<button type="button" class="btn btn-success list" data-toggle="modal" data-target="#more_info">List</button>'
+            //       "defaultContent": ""
+          //      }],
+            "order": [[0, "desc"]]
+        });
     for (var i = 0; i < results.length; ++i) {
 
         var curr_report = results[i];
         table.row.add([curr_report.get('digitalID'),
-            moment(curr_report.get('updatedAt')).format('MM/DD/YYYY'),
+            moment(curr_report.get('soldAt')).format('MM/DD/YYYY'),
             curr_report.get('type'),
-            curr_report.get('quantity')]);
+            curr_report.get('quantity'),
+            curr_report.get('soldComment')]);
         table.draw(false);
     }
   //  handle_buttons_click();
@@ -73,7 +76,7 @@ function create_table(results) {
 
 $(document).ready(function () {
     load_reports();
-    $('.dpicker').datepicker({
-        todayBtn: "linked"
-    });
+  //  $('.dpicker').datepicker({
+  //      todayBtn: "linked"
+ //    });
 });
