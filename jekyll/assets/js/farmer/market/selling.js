@@ -50,6 +50,20 @@ function handle_buttons_click() {
         var id = data[0];
         remove_report(id, row);
     });
+
+    $('.sold').click(function () {
+        $('#submit_list').show();
+        var row = table.row($(this).parents('tr'));
+        var data = row.data();
+        var id = data[0];
+        $("#list-info").html(blue_alert('Please enter some additional information about your sale.'));
+        $('#submit_list').val(id);
+        $('#price').val("");
+        $('#sold_on').val("");
+        $("#total_price").html('(Invalid Price)');
+    });
+
+
 }
 
 function create_dict(results) {
@@ -70,19 +84,19 @@ function create_table(results) {
         + '<th>Quantity (Kg)</th>'
         + '<th>Unit Price</th>'
         + '<th>Total Price</th>'
-        // + '<th>Sold</th>'
+        + '<th>Sold</th>'
         + '<th>Remove</th>'
         + '</tr>'
         + '</thead>');
     table = $('#table').DataTable({
         "columnDefs": [
-            // {
-            //     "orderable": false,
-            //     "targets": -2,
-            //     "data": null,
-            //     "width": "1%",
-            //     "defaultContent": '<button type="button" class="btn btn-success list" data-toggle="modal" data-target="#more_info">Sold</button>'
-            // },
+             {
+                 "orderable": false,
+                "targets": -2,
+                 "data": null,
+                 "width": "1%",
+                 "defaultContent": '<button type="button" class="btn btn-success sold" data-toggle="modal" data-target="#more_info">Sold</button>'
+             },
             {
                 "orderable": false,
                 "targets": -1,

@@ -73,7 +73,4 @@ function create_table(results) {
 
 $(document).ready(function () {
     load_reports();
-    $('.dpicker').datepicker({
-        todayBtn: "linked"
-    });
 });
