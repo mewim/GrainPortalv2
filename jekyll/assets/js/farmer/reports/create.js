@@ -45,14 +45,7 @@ function submit(){
             new_report.set("sensorID", sensorID);
             new_report.set("listed", false);
             new_report.set("sold", false);
-            if(most_recent_data.count === 0){
-                new_report.set("digitalID", 0);
-            }
-
-            else{
-                var most_recent = most_recent_data[0];
-                new_report.set("digitalID", most_recent.get("digitalID") + 1);
-            }
+          
             $("#info").html(blue_alert('Submitting your report. Please wait.'));
             new_report.save(null, {
                 success: function (new_report) {
