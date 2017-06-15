@@ -35,7 +35,12 @@ function submit(){
         return;
     }
 
-
+    var most_recent_querry = new Parse.Query(FarmerReport);
+    most_recent_querry.equalTo("username", currentUser.get('username'));
+    most_recent_querry.descending("createdAt");
+    most_recent_querry.limit(1);
+    most_recent_querry.find({
+        success: function (most_recent_data) {
             var new_report = new FarmerReport();
             new_report.set("type", type);
             new_report.set("username", currentUser.get('username'));
@@ -45,7 +50,14 @@ function submit(){
             new_report.set("sensorID", sensorID);
             new_report.set("listed", false);
             new_report.set("sold", false);
-          
+            if(most_recent_data.count === 0){
+                new_report.set("digitalID", 0);
+            }
+
+            else{
+                var most_recent = most_recent_data[0];
+                new_report.set("digitalID", most_recent.get("digitalID") + 1);
+            }
             $("#info").html(blue_alert('Submitting your report. Please wait.'));
             new_report.save(null, {
                 success: function (new_report) {
@@ -57,9 +69,13 @@ function submit(){
                 }
             });
 
+        },
+        error: function (error) {
+            $("#info").html(red_alert('Your report cannot be submitted. Please try again later.'));
+        }
+    });
 
 }
-
 
 function reset(){
     $('#info').html(blue_alert('Create a report to help you better manage your yields. It also helps potential buyer and researchers learn more about your grain.'));
