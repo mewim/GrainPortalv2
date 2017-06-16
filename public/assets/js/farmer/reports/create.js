@@ -50,7 +50,7 @@ function submit(){
             new_report.set("sensorID", sensorID);
             new_report.set("listed", false);
             new_report.set("sold", false);
-            if(most_recent_data.count === 0){
+            if(most_recent_data.length === 0){
                 new_report.set("digitalID", 0);
             }
 
