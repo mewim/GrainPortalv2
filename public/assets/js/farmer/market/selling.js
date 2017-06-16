@@ -81,7 +81,7 @@ function submit_sale() {
     if (!unit_price || unit_price <= 0) {
         $("#sale-info").html(red_alert('Please enter a valid unit price.'));
         return;
-    }
+    }    
     if(!comment){
       $("#sale-info").html(red_alert('Please comment on the sale.'));
       return;
