@@ -9,7 +9,7 @@
 <!-- Parse SDK -->
 <script src="https://npmcdn.com/parse@1.9.1/dist/parse.js"></script>
 <script>
-    // Initialize Parse API 
+    // Initialize Parse API
     Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi", "iffERp8rzgHwekt7Qy4eBkc4O59XcRe3");
     Parse.serverURL = "https://grainportalv2.herokuapp.com/parse";
 </script>
@@ -210,18 +210,22 @@
                 <h4 class="modal-title" id="myModalLabel">More Information</h4>
             </div>
             <div class="modal-body">
-                <div id="list-info">
+                <div id="sale-info">
                     <div class="alert alert-info">
-                        <i class="fa fa-info-circle fa-fw"></i> Please enter some additional information about your selling.
+                        <i class="fa fa-info-circle fa-fw"></i> Please enter some additional information about your sale.
                     </div>
                 </div>
                     <div class="form-group">
-                        <label>Available at</label>
-                        <input class="form-control dpicker" id="available_at" placeholder="Select the date when the grain is available">
+                        <label>Sold On</label>
+                        <input class="form-control dpicker" id="sold_on" placeholder="Select the date when the grain was sold">
                     </div>
                     <div class="form-group">
                         <label>Unit Price</label>
                         <input class="form-control" oninput="compute_total_price()" id="price" placeholder="Enter price of the grain (per kilogram)">
+                    </div>
+                    <div class="form-group">
+                        <label>Comments About Sale</label>
+                        <input class="form-control"  id="comments" placeholder="Enter any comments/concerns you have about the sale">
                     </div>
                     <div class="form-group">
                         <label>Total Price</label>
@@ -230,7 +234,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success" id="submit_list" onclick="submit_list()">Submit</button>
+                <button type="button" class="btn btn-success" id="submit_sale" onclick="submit_sale()">Submit</button>
             </div>
         </div>
     </div>
