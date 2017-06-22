@@ -75,6 +75,7 @@ function create_table(results) {
 			+ '<th>Email</th>'
 			+ '<th>Detail</th>'
 			+ '<th>Contact</th>'
+			+ '<th>Remove phone# </th>'
 			+ '</tr>'
 	);
 	table = $('#table').DataTable({
@@ -86,17 +87,24 @@ function create_table(results) {
 			},
 			{
 				"orderable":false,
-				"targets": -2,
+				"targets": -3,
 				"data":null,
 				"width": "1%",
 				"defaultContent":'<button type="button" class="btn btn-primary detail">Get Detail</button>',
 			},
 			{
 				"orderable": false,
-				"targets":-1,
+				"targets":-2,
 				"data":null,
 				"width": "1%",
 				"defaultContent": '<button type="button" class="btn btn-success contact" data-toggle="modal" data-target="#more_info">Contact Farmer</button>',
+			},
+			{
+				"orderable": false,
+				"targets":-1,
+				"data":null,
+				"width": "1%",
+				"defaultContent": '<button type="button" class="btn btn-danger remove_phone" data-toggle="modal" data-target="#remove_phone_modal" >Remove phone#</button>',
 			},
 			{
 				"targets": [1, 2, 3, 4, 5, 6, 7],
@@ -136,6 +144,13 @@ function handle_buttons_click() {
         var id = data[0];
         contact_clicked(id);
     });
+    $('.remove_phone').click(function(){
+        var row = table.row($(this).parents('tr'));
+        var data = row.data();
+        var id = data[0];
+        remove_phone_clicked(id);
+
+    })
     $('.goback').click(function () {
 			toggleview();
 			load_reports();
@@ -262,6 +277,9 @@ function contact_clicked(id){
     );
 }
 
+
+
+
 function submit_message(){
     var id = $("#submit_message").val();
     var content = $('#message').val();
@@ -296,4 +314,47 @@ function submit_message(){
             $("#contact-info").html(('Network error. Please try again later.'));
         }
     });
+}
+
+function remove_phone_clicked(id){
+    $("#remove_phone").val(id);
+    $("#remove_phone").show();
+}
+
+// remove phone number function
+function remove_phone_number(){
+	var id = $("#remove_phone").val();
+	console.log(id);
+    var listing = report_dict[id];
+    var phone_number = listing.get("phoneNumber");
+    console.log(phone_number);
+    if(phone_number == ""){
+    	$("#user-info").html(red_alert('Phone number is invalid'));
+    	return;
+    }
+    var query = new Parse.Query(FarmerProfile);
+    query.get(id, {
+        success: function (user) {
+        	console.log(user);
+            $("#remove_phone").hide();
+            user.set("phoneNumber", "");
+
+            user.save(null, {
+                success: function (new_user) {
+                    console.log(new_user);
+                    // Execute any logic that should take place after the object is saved.
+                    $("#user-info").html(green_alert('Phone number removed'));
+                },
+                error: function (new_user, error) {
+                	console.log(new_user);
+                    $("#user-info").html(red_alert('Phone number cannot be removed'));
+                    $("#remove_phone").show();
+                }
+            });
+        },
+        error: function (question, error) {
+            $("#user-info").html(red_alert('Your answer cannot be submitted. Please try again later.'));
+        }
+    });
+	
 }

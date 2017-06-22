@@ -85,6 +85,34 @@ layout: admin_main
     </div>
 </div>
 
+
+
+<!-- remove phone number modal -->
+<div class="modal fade" id="remove_phone_modal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Remove phone number</h4>
+        </div>
+        <div class="modal-body">
+          <div id="user-info">
+             <div class="alert alert-info">
+                 <i class="fa fa-info-circle fa-fw"></i> Are you sure you want to remove the phone number? This process cannot be restored.
+             </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id = "remove_phone" onclick="remove_phone_number()">Remove</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+      
+    </div>
+
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
 <script src="/assets/js/admin/index.js"></script>

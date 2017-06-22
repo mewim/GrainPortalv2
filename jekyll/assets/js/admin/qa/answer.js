@@ -28,7 +28,7 @@ function add_question(question) {
         + '<p>'
         + content
         + '</p>'
-        + '<button class="btn btn-danger answer" data-toggle="modal" data-target="#more_info" value="'
+        + '<button class="btn btn-success answer" data-toggle="modal" data-target="#more_info" value="'
         + id
         + '">Answer</button>'
         + '</div>'
@@ -61,6 +61,7 @@ function load_questions() {
 
 function submit_answer(){
     var id = $("#submit_answer").val();
+    
     var content = $('#answer-text').val();
     if(!content){
         $('#answer-info').html(red_alert("Please enter your message to send."));

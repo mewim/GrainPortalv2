@@ -540,6 +540,29 @@ table.dataTable thead .sorting:after {
     background-color: #ddd;
 }
 
+.background-report{
+    background: url("http://asi.ucdavis.edu/programs/sarep/research-initiatives/are/files/AREbannerimage.png");
+    background-position: 20px, auto;
+    background-size: 1000px 600px;
+    background-repeat: no-repeat;
+
+}
+
+.report-style{
+    color : #FFF0F5;
+    font-weight: bold;
+    font-size: 15px;
+}
+.sold-style{
+    color : #000000;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+hr{
+    padding-top:5px;
+}
+
 .loader:before {
     display: block;
     position: absolute;
