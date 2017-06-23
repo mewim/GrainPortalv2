@@ -1,22 +1,30 @@
 var FarmerReport = Parse.Object.extend("FarmerReport");
 var Sensor = Parse.Object.extend("Sensor");
+var SensorData = Parse.Object.extend("SensorData");
+var User = Parse.Object.extend("User");
 
 var table = null;
 var report_dict = {};
+
+
+
 
 function show_detail(id){
     var target = report_dict[id];
     if (target) {
         var start = moment(target.get('sensorStartDate')).format('MM/DD/YYYY'),
             end = moment(target.get('sensorEndDate')).format('MM/DD/YYYY'),
-            sensorID = target.get('sensorID');
+            sensorID = target.get('sensorID'),
+            username = target.get('username');
         var query = new Parse.Query(Sensor);
         query.get(sensorID, {
             success: function (sensor) {
                 var major = sensor.get('major'),
                     minor = sensor.get('minor');
-                var hash = major + '*' + minor + '*' + start + '*' + end;
-                window.location = ('/trader/sensor_read/#' + hash);
+
+                var hash = major + '*' + minor + '*' + start + '*' + end + '*' + username;
+                window.location = ('/trader/details/#' + hash);
+
             },
             error: function (sensor, error) {
             }
@@ -118,7 +126,7 @@ function handle_buttons_click() {
         var row = table.row($(this).parents('tr'));
         var data = row.data();
         var id = data[0];
-        show_detail(id);
+       show_detail(id);
     });
     $('.contact').click(function () {
         var row = table.row($(this).parents('tr'));

@@ -2,15 +2,16 @@ var Sensor = Parse.Object.extend("Sensor");
 var SensorData = Parse.Object.extend("SensorData");
 var table = null;
 
-function read() {
+function read(major,minor,start,end) {
     $("#alert").html(blue_alert("Loading..."));
     $("#table-wrapper").html('');
     $("#morris_chart").html('');
     var name = $('#name').val();
-    var major = $('#major').val();
-    var minor = $('#minor').val();
-    var raw_start = $('#start').val();
-    var raw_end = $('#end').val();
+   var major = $('#major').val();
+   var minor = $('#minor').val();
+   var raw_start = $('#start').val();
+   var raw_end = $('#end').val();
+
 
     if (!major) {
         $("#alert").html(red_alert('Please enter major for the sensor.'));
