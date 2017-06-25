@@ -1,0 +1,52 @@
+---
+layout: trader_main
+---
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Seller Details</h1>
+    </div>
+</div>
+
+<div class="row">
+    <!-- /.panel-heading -->
+        <div class="col-lg-12" id="alert">
+            <div class="alert alert-info">
+                <i class="fa fa-info-circle fa-fw"></i> Enter major and minor value of a sensor to get readings from it.
+            </div>
+        </div>
+
+
+        <div class="col-lg-12">
+            <br>
+            <div class="col-lg-12" id="other-wrapper"></div>
+        </div>
+
+
+    <!-- <div class="col-lg-12">
+        <button type="button" class="btn btn-success" onclick="read()">Get Readings</button>
+        <button type="button" class="btn btn-danger" onclick="reset()">Reset Form</button>
+    </div> -->
+
+    <div class="col-lg-12">
+        <br>
+        <div id="morris_chart" style="height: 250px;"></div>
+    </div>
+
+
+
+    <div class="col-lg-12">
+        <br>
+        <div class="col-lg-12" id="table-wrapper"></div>
+    </div>
+</div>
+
+<!-- bootstrap-datepicker-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css"
+      rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+<!-- morris.js-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+<script src="/assets/js/trader/details.js"></script>
+<!--script src="/assets/js/farmer/sensors/read.js"></script-->
