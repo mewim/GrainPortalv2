@@ -116,7 +116,7 @@ function remove_sensor(major, minor, row) {
         error: function (error) {
         }
     });
-    row.remove().draw();
+    //row.remove().draw();
     handle_buttons_click();
 }
 
