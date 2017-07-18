@@ -29,9 +29,9 @@ layout: farmer_main
                 <h4 class="modal-title" id="myModalLabel">More Information</h4>
             </div>
             <div class="modal-body">
-                <div id="list-info">
+                <div id="sale-info">
                     <div class="alert alert-info">
-                        <i class="fa fa-info-circle fa-fw"></i> Please enter the details of your sale.
+                        <i class="fa fa-info-circle fa-fw"></i> Please enter some additional information about your sale.
                     </div>
                 </div>
                     <div class="form-group">
@@ -43,13 +43,17 @@ layout: farmer_main
                         <input class="form-control" oninput="compute_total_price()" id="price" placeholder="Enter price of the grain (per kilogram)">
                     </div>
                     <div class="form-group">
+                        <label>Comments About Sale</label>
+                        <input class="form-control"  id="comments" placeholder="Enter any comments/concerns you have about the sale">
+                    </div>
+                    <div class="form-group">
                         <label>Total Price</label>
                         <p id="total_price">(Invalid Price)</p>
                     </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success" id="submit_list" onclick="submit_list()">Submit</button>
+                <button type="button" class="btn btn-success" id="submit_sale" onclick="submit_sale()">Submit</button>
             </div>
         </div>
     </div>
