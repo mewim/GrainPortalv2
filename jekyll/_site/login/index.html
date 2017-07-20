@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grain Portal v2.0</title>
+<!-- jQuery 2 -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<!-- Parse SDK -->
+<script src="https://npmcdn.com/parse@1.9.1/dist/parse.js"></script>
+<script>
+    // Initialize Parse API 
+    Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi", "iffERp8rzgHwekt7Qy4eBkc4O59XcRe3");
+    Parse.serverURL = "https://grainportalv2.herokuapp.com/parse";
+</script>
+
+<!-- Material Design fonts -->
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+<!-- Bootstrap 3 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<!-- Bootstrap Material Design -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/bootstrap-material-design.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/ripples.min.css">
+
+<!-- Font Awesome Icons -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- SB Admin 2 -->
+<link href="/assets/css/sb-admin-2.css" rel="stylesheet">
+<script src="/assets/js/util.js"></script>
+
+
+    <!-- User Javascript and CSS -->
+    <script src="/assets/js/login.js"></script>
+    <style>
+        body {
+            background: url("/assets/img/field.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+<div class="navbar-header">
+    <a class="navbar-brand" href="/">Grain Portal v2.0</a>
+</div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please Sign In</h3>
+                </div>
+                <div class="panel-body">
+                        <fieldset>
+                            <div id="info">
+                            <div class="alert alert-info">
+                                <i class="fa fa-info-circle fa-fw"></i> If you need a new password, enter your username and click "Request New Password". A new password will be sent to your phone.
+                            </div>
+                            </div>
+                            <div class="form-group">
+                                <input id="username" class="form-control" placeholder="Username" name="username"
+                                       autofocus>
+                                <input id="password" class="form-control" placeholder="Password" name="password"
+                                       type="password"
+                                       value="">
+                            </div>
+                            <!-- Change this to a button or input when using this as a form -->
+                            <button class="btn btn-lg btn-success btn-block" onclick="login()">Login</button>
+                            <button class="btn btn-lg btn-primary btn-block" onclick="reset()">Request New Password</button>
+                            <div id = "alert"></div>
+                        </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <div style="text-align: center">
+                        <a href="/signup"><h5 class="panel-title">Sign Up</h5></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
