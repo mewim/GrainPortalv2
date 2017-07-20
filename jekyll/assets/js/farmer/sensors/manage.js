@@ -116,7 +116,7 @@ function remove_sensor(major, minor, row) {
         error: function (error) {
         }
     });
-    row.remove().draw();
+  //  row.remove().draw();
     handle_buttons_click();
 }
 
@@ -148,8 +148,8 @@ function create_table(results) {
         + '<thead>'
         + '<tr>'
         + '<th>Name</th>'
-        + '<th>Major</th>'
-        + '<th>Minor</th>'
+        + '<th>Hub</th>'
+        + '<th>Sensor</th>'
         + '<th>Readings</th>'
         + '<th>Remove</th>'
         + '</tr>'
