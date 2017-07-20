@@ -54,19 +54,15 @@
     <!-- SB Admin 2 -->
     <script src="/assets/js/sb-admin-2.js"></script>
     <!-- User Javascript and CSS -->
-
-    <!-- DEBUG everone.root. : )
     <script type="text/javascript">
         var currentUser = Parse.User.current();
         if (!currentUser) {
             window.location = '/login';
         }
     </script>
-  -->
 </head>
 <body>
 <div id="wrapper">
-		<!-- Changed -->
     <!-- Navigation -->
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
     <div class="navbar-header">
@@ -105,31 +101,11 @@
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <li>
-                    <a href="/admin/"><i class="fa fa-address-book fa-fw"></i> Farmers' Profiles</a>
+                    <a href="/trader/"><i class="fa fa-shopping-cart fa-fw"></i> Market</a>
                 </li>
 
                 <li>
-                    <a href="/admin/favorite"><i class="fa fa-star fa-fw"></i> Favorite</a>
-                </li>
-
-                <li>
-                    <a href="#"><i class="fa fa-question-circle fa-fw"></i> Q & A<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="/admin/qa/answer/">Answer Question</a>
-                        </li>
-                        <li>
-                            <a href="/admin/qa/answered/">Answered</a>
-                        </li>
-                    </ul>
-                    <!-- /.nav-second-level -->
-                </li>
-
-                <li>
-                    <a href="/admin/guide/"><i class="fa fa-info-circle fa-fw"></i> Guide</a>
-                </li>
-				<li>
-                    <a href="/admin/view_report/"><i class="fa fa-envelope-open-o"></i> View Report </a>
+                    <a href="/trader/guide/"><i class="fa fa-info-circle fa-fw"></i> Guide</a>
                 </li>
             </ul>
         </div>
@@ -137,55 +113,57 @@
     </div>
     <!-- /.navbar-static-side -->
 </nav>
-
     <div id="page-wrapper">
         <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Answer Questions</h1>
+        <h1 class="page-header">Seller Details</h1>
     </div>
 </div>
 
-<div id="info">
-
-</div>
 <div class="row">
-    <div class="col-lg-12" id="question-container">
-        <div class="huge">
-            <div class="loader"></div>
+    <!-- /.panel-heading -->
+        <div class="col-lg-12" id="alert">
+            <div class="alert alert-info">
+                <i class="fa fa-info-circle fa-fw"></i> Enter major and minor value of a sensor to get readings from it.
+            </div>
         </div>
+
+
+        <div class="col-lg-12">
+            <br>
+            <div class="col-lg-12" id="other-wrapper"></div>
+        </div>
+
+
+    <!-- <div class="col-lg-12">
+        <button type="button" class="btn btn-success" onclick="read()">Get Readings</button>
+        <button type="button" class="btn btn-danger" onclick="reset()">Reset Form</button>
+    </div> -->
+
+    <div class="col-lg-12">
         <br>
-        <h4 style="text-align:center">Loading...</h4>
+        <div id="morris_chart" style="height: 250px;"></div>
+    </div>
+
+
+
+    <div class="col-lg-12">
+        <br>
+        <div class="col-lg-12" id="table-wrapper"></div>
     </div>
 </div>
 
-<div class="modal fade" id="more_info" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">Answer Question</h4>
-            </div>
-            <div class="modal-body">
-                <div id="answer-info">
-                    <div class="alert alert-info">
-                        <i class="fa fa-info-circle fa-fw"></i> Type the answer below.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" rows="12" id="answer-text"></textarea>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success" id="submit_answer" onclick="submit_answer()">Submit Answer</button>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- bootstrap-datepicker-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css"
+      rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+<!-- morris.js-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+<script src="/assets/js/trader/details.js"></script>
+<!--script src="/assets/js/farmer/sensors/read.js"></script-->
 
-<button type="button" class="btn btn-success contact" data-toggle="modal" data-target="#more_info">Contact Seller</button>
-</div>
-<script src="/assets/js/admin/qa/answer.js"></script>
     </div>
 </div>
 </body>
