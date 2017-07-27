@@ -161,7 +161,7 @@ function SENREP(text_arr, from, res) {
             temperature: text_arr[3],
             humidity: text_arr[4]
         };
-        SensorData.create(raw_report, function (saved) {
+        SensorReport.create(raw_report, function (saved) {
             if (saved) {
                 Sensor.query(raw_report, function (sensor_query) {
                     if (sensor_query.found) {
