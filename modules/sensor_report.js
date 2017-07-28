@@ -1,5 +1,4 @@
 var Parse = require('parse/node');
-console.log(JSON.stringify(Parse));
 var SensorData = Parse.Object.extend("SensorData");
 
 /*
