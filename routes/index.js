@@ -76,8 +76,13 @@ app.use('/send_message', require('./send_message'));
 var port = process.env.PORT || 1337;
 var httpServer = require('http').createServer(app);
 httpServer.listen(port, function () {
-    console.log('parse-server-example running on port ' + port + '.');
+    console.log('GrainPortalv2 running on port ' + port + '.');
 });
 
 // This will enable the Live Query real-time server
 ParseServer.createLiveQueryServer(httpServer);
+// Initialize Parse backend connection here
+var Parse = require('parse/node');
+Parse.initialize(process.env.APP_ID, process.env.JAVASCRIPT_KEY, process.env.MASTER_KEY);
+Parse.serverURL = process.env.SERVER_URL;
+
