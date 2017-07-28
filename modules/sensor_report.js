@@ -18,6 +18,7 @@ module.exports = {
      * @param callback: callback function. param: Boolean, indicating if the report is saved.
      */
     create: function (raw_report, callback) {
+        console.log(raw_report);
         if ((!raw_report.major) || (isNaN(raw_report.major))) {
             callback(false);
             return;
