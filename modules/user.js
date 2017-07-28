@@ -106,7 +106,6 @@ module.exports = {
      * @param callback: callback function. param: {success: Boolean, message: String, password: password for the user, user: Parse user object }
      */
     create: function (user, callback) {
-        Parse.initialize(process.env.APP_ID, process.env.JAVASCRIPT_KEY, process.env.MASTER_KEY);
         var userValidate = validateUserInfo(user);
         if (userValidate.success) {
             user.password = getRandomInt(10000000, 99999999).toString();

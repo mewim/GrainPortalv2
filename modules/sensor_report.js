@@ -17,41 +17,34 @@ module.exports = {
      * @param callback: callback function. param: Boolean, indicating if the report is saved.
      */
     create: function (raw_report, callback) {
-        console.log(JSON.stringify(raw_report));
         if ((!raw_report.major) || (isNaN(raw_report.major))) {
-            console.log('major_error');
             callback(false);
             return;
         }
         var major = raw_report.major;
 
         if ((!raw_report.minor) || (isNaN(raw_report.minor))) {
-            console.log('minor_error');
             callback(false);
             return;
         }
         var minor = raw_report.minor;
 
         if(!raw_report.temperature){
-            console.log('temp_error');
             callback(false);
             return;
         }
         var temperature = Number(raw_report.temperature);
         if (isNaN(temperature)) {
-            console.log('temp2_error');
             callback(false);
             return;
         }
 
         if(!raw_report.humidity){
-            console.log('humi_error');
             callback(false);
             return;
         }
         var humidity = Number(raw_report.humidity);
         if (isNaN(humidity)) {
-            console.log('humi2_error');
             callback(false);
             return;
         }
@@ -64,12 +57,10 @@ module.exports = {
 
         new_data.save(null, {
             success: function (new_data) {
-                console.log('created', JSON.stringify(new_data));
                 callback(true);
                 return;
             },
             error: function (new_data, error) {
-                console.log('err', JSON.stringify(error));
                 callback(false);
                 return;
             }

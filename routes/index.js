@@ -10,7 +10,7 @@ var path = require('path');
 // Add ParseDashboard
 var ParseDashboard = require('parse-dashboard');
 var allowInsecureHTTP = true;
-
+var Parse = require('parse/node');
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
 if (!databaseUri) {
@@ -82,7 +82,7 @@ httpServer.listen(port, function () {
 // This will enable the Live Query real-time server
 ParseServer.createLiveQueryServer(httpServer);
 // Initialize Parse backend connection here
-var Parse = require('parse/node');
 Parse.initialize(process.env.APP_ID, process.env.JAVASCRIPT_KEY, process.env.MASTER_KEY);
 Parse.serverURL = process.env.SERVER_URL;
+console.log('Parse backend connection initialized.');
 
