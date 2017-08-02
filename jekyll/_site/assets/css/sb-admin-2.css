@@ -572,3 +572,7 @@ table.dataTable thead .sorting:after {
         left: 100%;
     }
 }
+
+.navbar-element {
+  font-size: 20px;
+}
