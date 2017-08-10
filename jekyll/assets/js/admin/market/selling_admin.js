@@ -29,7 +29,7 @@ function show_loader() {
 function load_reports() {
     show_loader();
     var query = new Parse.Query(FarmerReport);
-    query.equalTo("username", currentUser.get('username'));
+//  query.equalTo("username", currentUser.get('username'));
     query.equalTo("listed", true);
     query.equalTo("sold", false);
     query.find({
@@ -157,28 +157,11 @@ function create_table(results) {
         + '<th>Quantity (Kg)</th>'
         + '<th>Unit Price</th>'
         + '<th>Total Price</th>'
-        + '<th>Sold</th>'
-        + '<th>Remove</th>'
+//      + '<th>Sold</th>'
+//      + '<th>Remove</th>'
         + '</tr>'
         + '</thead>');
-    table = $('#table').DataTable({
-        "columnDefs": [
-             {
-                 "orderable": false,
-                "targets": -2,
-                 "data": null,
-                 "width": "1%",
-                 "defaultContent": '<button type="button" class="btn btn-success sold" data-toggle="modal" data-target="#more_info">Sold</button>'
-             },
-            {
-                "orderable": false,
-                "targets": -1,
-                "data": null,
-                "width": "1%",
-                "defaultContent": '<button type="button" class="btn btn-danger remove">Remove</button>'
-            }],
-        "order": [[0, "desc"]]
-    });
+    table = $('#table').DataTable();
     for (var i = 0; i < results.length; ++i) {
 
         var curr_report = results[i];
