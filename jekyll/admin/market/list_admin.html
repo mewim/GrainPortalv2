@@ -1,0 +1,60 @@
+---
+layout: admin_main
+---
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">List Of All Grains</h1>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="alert alert-info">
+            <i class="fa fa-info-circle fa-fw"></i> These are all the grains that haven't yet been put for sale.
+        </div>
+    </div>
+    <div class="col-lg-12" id="table-wrapper">
+
+    </div>
+</div>
+
+<!-- Modal -->
+<!--div class="modal fade" id="more_info" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">More Information</h4>
+            </div>
+            <div class="modal-body">
+                <div id="list-info">
+                    <div class="alert alert-info">
+                        <i class="fa fa-info-circle fa-fw"></i> Please enter some additional information about your selling.
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <label>Available at</label>
+                        <input class="form-control dpicker" id="available_at" placeholder="Select the date when the grain is available">
+                    </div>
+                    <div class="form-group">
+                        <label>Unit Price</label>
+                        <input class="form-control" oninput="compute_total_price()" id="price" placeholder="Enter price of the grain (per kilogram)">
+                    </div>
+                    <div class="form-group">
+                        <label>Total Price</label>
+                        <p id="total_price">(Invalid Price)</p>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="submit_list" onclick="submit_list()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div-->
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+<script src="/assets/js/admin/market/list_admin.js"></script>
