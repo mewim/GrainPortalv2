@@ -576,3 +576,9 @@ table.dataTable thead .sorting:after {
 .navbar-element {
   font-size: 20px;
 }
+
+iframe {
+	width: 100%;
+    height: 900px;
+	background-color: aqua;
+}
