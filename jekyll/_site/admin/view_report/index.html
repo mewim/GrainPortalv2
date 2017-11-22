@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grain Portal v2.0</title>
+<!-- jQuery 2 -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<!-- Parse SDK -->
+<script src="https://npmcdn.com/parse@1.9.1/dist/parse.js"></script>
+<script>
+    // Initialize Parse API 
+    Parse.initialize("Hbzk6oLuByPRXDryfHxuNa9dWbikJJLi", "iffERp8rzgHwekt7Qy4eBkc4O59XcRe3");
+    Parse.serverURL = "https://grainportalv2.herokuapp.com/parse";
+</script>
+
+<!-- Material Design fonts -->
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+<!-- Bootstrap 3 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<!-- Bootstrap Material Design -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/bootstrap-material-design.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/ripples.min.css">
+
+<!-- Font Awesome Icons -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- SB Admin 2 -->
+<link href="/assets/css/sb-admin-2.css" rel="stylesheet">
+<script src="/assets/js/util.js"></script>
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- metisMenus -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.5.2/metisMenu.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.5.2/metisMenu.min.js"></script>
+    <!-- DataTables -->
+    <link href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <link href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.1.0/js/responsive.bootstrap.min.js"></script>
+    <!-- moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js"></script>
+    <!-- SB Admin 2 -->
+    <script src="/assets/js/sb-admin-2.js"></script>
+    <!-- User Javascript and CSS -->
+
+    <!-- DEBUG everone.root. : )
+    <script type="text/javascript">
+        var currentUser = Parse.User.current();
+        if (!currentUser) {
+            window.location = '/login';
+        }
+    </script>
+  -->
+</head>
+<body>
+<div id="wrapper">
+		<!-- Changed -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/trader">Grain Portal v2.0</a>
+    </div>
+    <!-- /.navbar-header -->
+
+    <ul class="nav navbar-nav navbar-right">
+        <!-- /.dropdown -->
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li><a href="/user_profile"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                </li>
+                <!--<li><a href="#"><i class="fa fa-trash-o fa-fw"></i> Delete Me</a>-->
+                <!--</li>-->
+                <li class="divider"></li>
+                <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+            </ul>
+            <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+    </ul>
+    <!-- /.navbar-top-links -->
+
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="navbar-element">
+                    <a href="#"><i class="fa fa-user-circle fa-fw"></i> Farmer Info <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="/admin/index">Farmer's Profile</a>
+                        </li>
+						<li>
+                            <a href="/admin/favorite">Favorites</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+				
+				
+				<li class="navbar-element">
+                    <a href="#"><i class="fa fa-book fa-fw"></i> Value Chain Info <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="/admin/valuechain/valuechain/">View Cards</a>
+                        </li>
+						<li>
+                            <a href="/admin/valuechain/addcard">Add a Card</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+
+                
+                <li class="navbar-element">
+                    <a href="#"><i  class="fa fa-shopping-basket fa-fw"></i> Market <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="/admin/market/list_admin/">List</a>
+                        </li>
+                        <li>
+                            <a href="/admin/market/selling_admin/">Selling</a>
+                        </li>
+                        <li>
+                            <a href="/admin/market/sold_admin/">Sold</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+
+                <li class="navbar-element">
+                    <a href="#"><i class="fa fa-question-circle fa-fw"></i> Q & A<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="/admin/qa/answer/">Answer Question</a>
+                        </li>
+                        <li>
+                            <a href="/admin/qa/answered/">Answered</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+
+                <li class="navbar-element">
+                    <a href="/admin/guide/"><i class="fa fa-info-circle fa-fw"></i> Guide</a>
+                </li>
+				<li class="navbar-element">
+                    <a href="/admin/view_report/"><i class="fa fa-envelope-open-o"></i> View Report </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.navbar-static-side -->
+</nav>
+
+    <div id="page-wrapper">
+        <!-- Table View class -->
+<div class="row tableview">
+    <div class="col-lg-12">
+        <h1 class="page-header">View Report</h1>
+    </div>
+</div>
+
+<div id="info">
+
+</div>
+<div class="row">
+    <div class="col-lg-12" id="report-container">
+        <div class="huge">
+            <div class="loader"></div>
+        </div>
+        <br>
+        <h4 style="text-align:center">Loading...</h4>
+    </div>
+</div>
+
+<script src="/assets/js/admin/view_report.js"></script>
+    </div>
+</div>
+</body>
+</html>
