@@ -108,10 +108,10 @@
                     <a href="#"><i class="fa fa-user-circle fa-fw"></i> Farmer Info <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/admin/index/">Farmer's Profile</a>
+                            <a href="/admin/index">Farmer's Profile</a>
                         </li>
 						<li>
-                            <a href="/admin/favorite/">Favorites</a>
+                            <a href="/admin/favorite">Favorites</a>
                         </li>
                     
                     </ul>
@@ -131,9 +131,7 @@
                     </ul>
                 </li>
 
-                <li class="navbar-element">
-                    <a href="/admin/favorite"><i class="fa fa-star fa-fw"></i> Favorites</a>
-                </li>
+                
                 <li class="navbar-element">
                     <a href="#"><i  class="fa fa-shopping-basket fa-fw"></i> Market <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
@@ -184,12 +182,20 @@
 </div>
 
 <div class="row">
+    <div class="col-lg-12" id="valuechain-container">
+        <div class="huge">
+            <div class="loader"></div>
+        </div>
+        <br>
+        <h4 style="text-align:center">Loading...</h4>
+    </div>
 </div>
 
-<div class="row">
-<iframe src = "https://grainportal-blog.herokuapp.com/" frameBorder="0"></iframe>
+<div id="valuechain-content">
+
 
 </div>
+<script src="/assets/js/admin/value_chain.js"></script>
     </div>
 </div>
 </body>
